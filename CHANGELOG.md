@@ -3,6 +3,8 @@ Changelog
 
 *Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.10.3/CHANGELOG.md)*
 
+* next
+  * TDEPS-256 create-basis - when different project dir is specified, should be used to resolve relative local deps
 * 0.18.1354 on May 31, 2023
   * Update to tools.deps.cli 0.9.43 in root deps.edn
 * 0.18.1349 on May 31, 2023
