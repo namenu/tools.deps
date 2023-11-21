@@ -282,6 +282,23 @@
             (is (= ['ex/b {:local/root abs-b}]
                    (ext/canonicalize 'ex/b {:local/root abs-b} {})))))))))
 
+(deftest test-local-root-relative-to-project-deps
+  (with-test-dir
+    (let [base (.getCanonicalFile *test-dir*)
+          adeps (.getPath (jio/file base "a/deps.edn"))
+          bdeps (.getPath (jio/file base "b/deps.edn"))
+          bdir (.getAbsolutePath (jio/file base "b"))]
+      (jio/make-parents *test-dir* "a/deps.edn")
+      (jio/make-parents *test-dir* "b/deps.edn")
+      (spit adeps "{:deps {b/b {:local/root \"../b\"}}}")
+      (spit bdeps "{:paths [\"src\"]}")
+      (let [b (deps/create-basis {:user nil :project adeps})]
+        (is (contains? (:classpath b) (.getAbsolutePath (jio/file bdir "src"))))))))
+
+(comment
+  (test-local-root-relative-to-project-deps)
+  )
+
 ;; simple check that pom resolution is working - load tda itself as pom dep
 (deftest test-local-pom
   (is (seq (deps/resolve-deps
