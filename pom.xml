@@ -21,8 +21,8 @@
     <!-- used for build -->
     <clojure.warnOnReflection>true</clojure.warnOnReflection>
     <clojure.version>1.10.3</clojure.version>
-    <resolverVersion>1.8.2</resolverVersion>
-    <mavenVersion>3.8.6</mavenVersion>
+    <resolverVersion>1.9.18</resolverVersion>
+    <mavenVersion>3.9.6</mavenVersion>
 
     <!-- default published in install deps.edn -->
     <clojure.default>1.10.3</clojure.default>
@@ -78,26 +78,6 @@
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-core</artifactId>
       <version>${mavenVersion}</version>
-	    <exclusions>
-        <exclusion> <!-- CVE-2021-29425 -->
-          <groupId>commons-io</groupId>
-          <artifactId>commons-io</artifactId>
-        </exclusion>
-        <exclusion> <!-- CVE-2020-8908 -->
-          <groupId>com.google.guava</groupId>
-          <artifactId>guava</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency> <!-- overridden transitive dep -->
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.15.1</version>
-    </dependency>
-    <dependency> <!-- overridden transitive dep -->
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>31.1-android</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -124,6 +104,35 @@
       <groupId>com.cognitect.aws</groupId>
       <artifactId>api</artifactId>
       <version>0.8.686</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-http</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-client</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-util</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency> <!-- override for CVE fixes -->
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-http</artifactId>
+      <version>9.4.53.v20231009</version>
+    </dependency>
+    <dependency> <!-- override for CVE fixes -->
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-client</artifactId>
+      <version>9.4.53.v20231009</version>
+    </dependency>
+    <dependency> <!-- override for CVE fixes -->
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-client</artifactId>
+      <version>9.4.53.v20231009</version>
     </dependency>
     <dependency>
       <groupId>com.cognitect.aws</groupId>
