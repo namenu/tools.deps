@@ -1,7 +1,7 @@
 Changelog
 ===========
 
-*Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.10.3/CHANGELOG.md)*
+*Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.11.1/CHANGELOG.md)*
 
 * next
   * TDEPS-256 create-basis - when different project dir is specified, should be used to resolve relative local deps
