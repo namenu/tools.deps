@@ -257,7 +257,7 @@
           (let [res (deps/resolve-deps {:deps {'ex/a {:fkn/version "1"}}} nil)]
             (libs->lib-ver res))))))
 
-(def ^:dynamic ^File *test-dir*)
+(def ^:dynamic ^File *test-dir* nil)
 
 (defmacro with-test-dir
   [& body]
