@@ -24,7 +24,7 @@
    :test {:extra-paths ["src/test/clojure"]}
 
    ;; clj -M:lint
-   :lint {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2022.10.14"}}
+   :lint {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2023.10.20"}}
           :main-opts ["-m" "clj-kondo.main" "--lint" "src/main/clojure" "--lint" "src/test/clojure"]}
 
    ;; clj -M:cve
