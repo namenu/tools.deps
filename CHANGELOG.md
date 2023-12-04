@@ -3,6 +3,8 @@ Changelog
 
 *Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.11.1/CHANGELOG.md)*
 
+* next
+  * Revert update of Maven resolver libs - seeing resolution differences
 * 0.18.1370 on Dec 4, 2023
   * TDEPS-256 create-basis - when different project dir is specified, should be used to resolve relative local deps
   * Update deps to latest
