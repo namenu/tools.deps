@@ -10,14 +10,14 @@
    org.apache.maven.resolver/maven-resolver-transport-http {:mvn/version "1.8.2"}
    org.apache.maven/maven-resolver-provider {:mvn/version "3.8.6"}
    org.apache.maven/maven-core {:mvn/version "3.8.6" exclusions [commons-io/commons-io com.google.guava/guava]}
-     commons-io/commons-io {:mvn/version "2.11.0"} ;; update transitive dep due to CVE-2021-29425
+     commons-io/commons-io {:mvn/version "2.15.1"} ;; update transitive dep due to CVE-2021-29425
      com.google.guava/guava {:mvn/version "31.1-android"} ;; update transitive dep due to CVE-2020-8908
    org.clojure/data.xml {:mvn/version "0.2.0-alpha8"}
    org.clojure/tools.gitlibs {:mvn/version "2.5.197"}
-   org.clojure/tools.cli {:mvn/version "1.0.214"}
-   com.cognitect.aws/api {:mvn/version "0.8.612"}
-   com.cognitect.aws/endpoints {:mvn/version "1.1.12.321"}
-   com.cognitect.aws/s3 {:mvn/version "822.2.1145.0"}
+   org.clojure/tools.cli {:mvn/version "1.0.219"}
+   com.cognitect.aws/api {:mvn/version "0.8.686"}
+   com.cognitect.aws/endpoints {:mvn/version "1.1.12.504"}
+   com.cognitect.aws/s3 {:mvn/version "848.2.1413.0"}
    javax.inject/javax.inject {:mvn/version "1"}
  }
  :aliases {
@@ -28,7 +28,7 @@
           :main-opts ["-m" "clj-kondo.main" "--lint" "src/main/clojure" "--lint" "src/test/clojure"]}
 
    ;; clj -M:cve
-   :cve {:extra-deps {io.github.clj-holmes/clj-watson {:git/tag "v4.1.0" :git/sha "e3da1b6"}}
+   :cve {:extra-deps {io.github.clj-holmes/clj-watson {:git/tag "v4.1.3" :git/sha "56dfd3e"}}
          :jvm-opts ["--illegal-access=deny"]
          :main-opts ["-m" "clj-watson.cli" "scan" "-p" "deps.edn"]}
 
