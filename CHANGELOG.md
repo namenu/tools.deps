@@ -5,6 +5,7 @@ Changelog
 
 * next
   * TDEPS-256 create-basis - when different project dir is specified, should be used to resolve relative local deps
+  * Update deps to latest
 * 0.18.1354 on May 31, 2023
   * Update to tools.deps.cli 0.9.43 in root deps.edn
 * 0.18.1349 on May 31, 2023
