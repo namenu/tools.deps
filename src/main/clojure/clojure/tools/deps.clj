@@ -10,7 +10,6 @@
   (:require
     [clojure.java.io :as jio]
     [clojure.set :as set]
-    [clojure.spec.alpha :as s]
     [clojure.string :as str]
     [clojure.tools.deps.util.concurrent :as concurrent]
     [clojure.tools.deps.util.dir :as dir]
@@ -36,9 +35,6 @@
   (let [path (.getAbsolutePath f)]
     (ex-info (format fmt path) {:path path})))
 
-(defn valid-deps? [m]
-  (s/valid? ::specs/deps-map m))
-
 (defn- slurp-edn-map
   "Read the file specified by the path-segments, slurp it, and read it as edn."
   [^File f]
@@ -48,9 +44,9 @@
                    (if (str/starts-with? (.getMessage t) "EOF while reading")
                      (throw (io-err "Error reading edn, delimiter unmatched (%s)" f))
                      (throw (io-err (str "Error reading edn. " (.getMessage t) " (%s)") f)))))]
-    (if (valid-deps? val)
+    (if (specs/valid-deps? val)
       val
-      (throw (io-err "%s is not valid." f)))))
+      (throw (io-err (str "Error reading deps %s. " (specs/explain-deps val)) f)))))
 
 ;; all this canonicalization is deprecated and will eventually be removed
 
