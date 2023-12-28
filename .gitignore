@@ -10,3 +10,4 @@ project.clj
 .clj-kondo/.cache
 test-out/
 .vscode/
+.clj-watson/
