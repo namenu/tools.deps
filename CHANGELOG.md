@@ -3,7 +3,9 @@ Changelog
 
 *Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.11.1/CHANGELOG.md)*
 
-* next
+* next on Dec 28, 2023
+  * Update maven core deps, remove Guava dep
+* 0.18.1385 on Dec 28, 2023
   * TDEPS-238 - deps.edn files are now validated against specs
   * TDEPS-239 - treat empty deps.edn file as {}
   * Update some minor dep versions
