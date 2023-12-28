@@ -6,6 +6,7 @@ Changelog
 * next
   * TDEPS-238 - deps.edn files are now validated against specs
   * TDEPS-239 - treat empty deps.edn file as {}
+  * Update some minor dep versions
 * 0.18.1374 on Dec 4, 2023
   * Revert update of Maven resolver libs - seeing resolution differences
 * 0.18.1370 on Dec 4, 2023

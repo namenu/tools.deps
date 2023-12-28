@@ -8,10 +8,9 @@
    org.apache.maven.resolver/maven-resolver-connector-basic {:mvn/version "1.8.2"}
    org.apache.maven.resolver/maven-resolver-transport-file {:mvn/version "1.8.2"}
    org.apache.maven.resolver/maven-resolver-transport-http {:mvn/version "1.8.2"}
-   org.apache.maven/maven-resolver-provider {:mvn/version "3.8.6"}
-   org.apache.maven/maven-core {:mvn/version "3.8.6" :exclusions [commons-io/commons-io com.google.guava/guava]}
-     commons-io/commons-io {:mvn/version "2.15.1"} ;; update transitive dep due to CVE-2021-29425
-     com.google.guava/guava {:mvn/version "31.1-jre"} ;; update transitive dep due to CVE-2020-8908
+   org.apache.maven/maven-resolver-provider {:mvn/version "3.8.8"}
+   org.apache.maven/maven-core {:mvn/version "3.8.8" :exclusions [com.google.guava/guava]}
+   ;  com.google.guava/guava {:mvn/version "33.0.0-jre"} ;; update transitive dep due to CVE-2020-8908
    org.clojure/data.xml {:mvn/version "0.2.0-alpha8"}
    org.clojure/tools.gitlibs {:mvn/version "2.5.197"}
    org.clojure/tools.cli {:mvn/version "1.0.219"}
