@@ -3,6 +3,8 @@ Changelog
 
 *Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.11.1/CHANGELOG.md)*
 
+* next
+  * Update to latest tools.deps.cli in root deps.edn
 * 0.18.1389 on Dec 28, 2023
   * Update maven core deps, remove Guava dep
 * 0.18.1385 on Dec 28, 2023
