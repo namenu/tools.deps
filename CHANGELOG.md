@@ -3,6 +3,8 @@ Changelog
 
 *Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.11.1/CHANGELOG.md)*
 
+* next
+  * Fix function spec typo
 * 0.18.1394 on Dec 29, 2023
   * Re-did release due to prior tagging failure
 * 0.18.1393 on Dec 29, 2023
