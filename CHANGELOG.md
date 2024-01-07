@@ -3,6 +3,8 @@ Changelog
 
 *Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.11.1/CHANGELOG.md)*
 
+* next
+  * Fix bug in TDEPS-256 change for :project usin relative dirs
 * 0.18.1398 on Jan 4, 2023
   * Fix function spec typo
 * 0.18.1394 on Dec 29, 2023
