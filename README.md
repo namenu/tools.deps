@@ -38,7 +38,7 @@ Latest release: 0.18.1398
 [deps.edn](https://clojure.org/guides/deps_and_cli) dependency information:
 
 ```
-org.clojure/tools.deps {:mvn/version "00.18.1398"}
+org.clojure/tools.deps {:mvn/version "0.18.1398"}
 ```
 
 [Leiningen](https://github.com/technomancy/leiningen/) dependency information:
