@@ -787,19 +787,6 @@
       project-edn (assoc :project project-edn)
       extra-edn (assoc :extra extra-edn))))
 
-(defmacro ^:private in-project-dir
-  "If project deps.edn is not in the current dir, push project directory
-  into current directory context while creating basis. Local deps use paths
-  relative to project dir. Use anaphoric 'assumed-project in body."
-  [project-deps & body]
-  `(if (and (instance? String ~project-deps)
-        (not (.equals dir/*the-dir* (.getParentFile (jio/file ~project-deps)))))
-     (dir/with-dir (.getParentFile (jio/file ~project-deps))
-       (let [~'assumed-project (.getName (jio/file ~project-deps))]
-         ~@body))
-     (let [~'assumed-project ~project-deps]
-       ~@body)))
-
 (defn create-basis
   "Create a basis from a set of deps sources and a set of aliases. By default, use
    root, user, and project deps and no argmaps (essentially the same classpath you get by
@@ -812,9 +799,10 @@
    subprocesses (tool, resolve-deps, make-classpath-map).
 
    Options:
+     :dir     - directory root path, defaults to current directory
      :root    - dep source, default = :standard
      :user    - dep source, default = :standard
-     :project - dep source, default = :standard (\"./deps.edn\")
+     :project - dep source, default = :standard (\"deps.edn\")
      :extra   - dep source, default = nil
      :aliases - coll of aliases, default = nil
 
@@ -834,12 +822,9 @@
     :libs - lib map, per resolve-deps
     :classpath - classpath map per make-classpath-map
     :classpath-roots - vector of paths in classpath order"
-  [{:keys [root user project extra aliases] :as params}]
-  (in-project-dir project
-    (let [project assumed-project ;; use anaphoric for project deps in context of project dir
-          params (cond-> params (contains? params :project) (assoc :project project))
-
-          basis-config (cond-> nil
+  [{:keys [dir root user project extra aliases] :as params}]
+  (dir/with-dir (jio/file (or dir "."))
+    (let [basis-config (cond-> nil
                          (contains? params :root) (assoc :root root)
                          (contains? params :project) (assoc :project project)
                          (contains? params :user) (assoc :user user)

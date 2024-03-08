@@ -5,7 +5,7 @@ Changelog
 
 * next
   * Default to Clojure 1.11.2 in root deps.edn
-  * Fix bug in TDEPS-256 change for :project using relative dirs
+  * Add :dir option to create-basis to change relative directory for basis creation
 * 0.18.1398 on Jan 4, 2023
   * Fix function spec typo
 * 0.18.1394 on Dec 29, 2023
