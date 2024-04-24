@@ -1,7 +1,7 @@
 Changelog
 ===========
 
-*Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.11.2/CHANGELOG.md)*
+*Also see [Tools and installer changelog](https://github.com/clojure/brew-install/blob/1.11.3/CHANGELOG.md)*
 
 * 0.19.1421 on Apr 24, 2024
   * Default to Clojure 1.11.3 in root deps.edn
